@@ -2,20 +2,24 @@
 
 const uuid = require('uuid').v4;
 const dynamoose = require('dynamoose');
-const PeopleModel = require('./people.schema');
+const PeopleModel = require('./people.schema.js');
 
 exports.handler = async (event) => {
-  try {
-    const {name, phone} = JSON.parse(event.body);
-    const id = uuid();
-    const record = new PeopleModel({ id, name, phone });
-    const data = await record.save()
+  try{
+    const id = event.queryStringParameters && event.queryStringParameters.id;
+    let data
+    if(id){
+      const list = await PeopleModel.query('id').eq(id).exec();
+      data = list[0];
+    } else {
+      data = await PeopleModel.scan().exec();
+    }
     return {
       statusCode: 200,
       body: JSON.stringify(data)
     }
-  } catch(error) {
-    return {
+  } catch(error){
+    return{
       statusCode: 500,
       response: error.message
     }
