@@ -8,4 +8,4 @@ const peopleSchema = new dynamoose.Schema({
   'phone': String
 });
 
-module.exports = dynamoose.model('people', peopleSchema)
+module.exports = dynamoose.model('people', peopleSchema);

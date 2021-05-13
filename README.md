@@ -17,7 +17,7 @@ Create a single resource REST API using a domain model of your choosing, constru
 
 ✨ Dependencies: uuid, dynamoose
 
-- Create one table for one data model at Dynamo DB
+- Create one table for one data model at DynamoDB
 - Create a `Dynamoose` schema to define the structure of your table
 - Write lambda functions that will separately perform the proper CRUD operation on the database
 - Create your routes using API Gateway
@@ -35,14 +35,14 @@ Create a single resource REST API using a domain model of your choosing, constru
   - Name your API, and keep the default settings for the remaining questions
   - Once you've created your API, click `routes`
   - Create routes for `GET`, `POST`, `PUT`, and `DELETE`
-    - Name your route appropriatly i.e. `/people`
+    - Name your route appropriately i.e. `/people`
     - NOTE: Once your routes are created, you will need to edit the route details for integration with Lambda
-      - Click `Attach intigration`
-      - Attache the appropriate intigration to the route you have selected
+      - Click `Attach integration`
+      - Attach the appropriate integration to the route you have selected
 - **Lambda:** 
-  - We're now going to create 4 functions for each of the route. Name them `get-people` etc to stick with a clean naming convention
+  - We're now going to create 4 functions for each of the routes. Name them `get-people` etc to stick with a clean naming convention
   - Add an API gateway trigger to each of your lambda functions
-    - Select the corrosponding API aka `people`
+    - Select the corresponding API aka `people`
     - Deployment stage: `$default`
     - Security: `Open`
   - It's time to write your Lambda functions in a text editor
@@ -53,7 +53,7 @@ Create a single resource REST API using a domain model of your choosing, constru
       - `npm i uuid dynamoose`
     - Write your lambda functions and build your schemas
     - Zip each route folder
-    - Upload each route folder to it's corrosponding lambda in AWS
+    - Upload each route folder to its corresponding lambda in AWS
 - **Role Permissions:**
   - Your lambdas will naturally create new roles that need to have the correct permissions
   - Navigate to IAM, and go to Roles
@@ -71,15 +71,23 @@ Create a single resource REST API using a domain model of your choosing, constru
 - PUT = update
 - DELETE = delete
 
+Test your routes in swagger:
+- GET and POST can be done in 'body' on swagger
+- PUT and DELETE will need a query paramater of id and the id number
+  - PUT will also require changes to body
+
 ## Data Architecture
 
+![WRRC/UML](./Flowchart.jpg)
+
+
 ```json
-// Test
+// Lambda Test
 {
     "body": "{\"id\": \"123456789\", \"name\": \"test_user\", \"phone\": \"123 456 7890\"}"
 }
 
-// Query
+// Query body
 {
   "id": "12345",
   "name": "test name",
@@ -89,5 +97,6 @@ Create a single resource REST API using a domain model of your choosing, constru
 
 ## Sources, Resources, & References
 
+- [Model | Dynamoose](https://dynamoosejs.com/guide/Model/)
 - [Query | Dynamoose](https://dynamoosejs.com/guide/Query/)
 - [Condition | Dynamoose](https://dynamoosejs.com/guide/Condition/#conditioneqvalue)
