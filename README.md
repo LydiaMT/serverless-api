@@ -7,7 +7,7 @@
 
 ✨ [API Base URL](https://3l7shcchfb.execute-api.us-west-2.amazonaws.com/people)
 
-✨ [GET lambda](https://github.com/LydiaMT/serverless-api/tree/main/get) | [POST lambda](https://github.com/LydiaMT/serverless-api/tree/main/post) | [PUT lambda](https://github.com/LydiaMT/serverless-api/tree/main/put) | [DELETE lambda](https://github.com/LydiaMT/serverless-api/tree/main/delete)
+✨ Lambdas: [GET](https://github.com/LydiaMT/serverless-api/tree/main/get) | [POST](https://github.com/LydiaMT/serverless-api/tree/main/post) | [PUT](https://github.com/LydiaMT/serverless-api/tree/main/put) | [DELETE](https://github.com/LydiaMT/serverless-api/tree/main/delete)
 
 ## Feature Tasks
 
