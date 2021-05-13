@@ -3,11 +3,11 @@
 
 ## Links & Resources
 
-✨ [Pull Request]()
+✨ [Pull Request](https://github.com/LydiaMT/serverless-api/pull/1)
 
 ✨ [API Base URL](https://3l7shcchfb.execute-api.us-west-2.amazonaws.com/people)
 
-✨ [GET lambda]() | [POST lambda]() | [PUT lambda]() | [DELETE lambda]()
+✨ [GET lambda](https://github.com/LydiaMT/serverless-api/tree/main/get) | [POST lambda](https://github.com/LydiaMT/serverless-api/tree/main/post) | [PUT lambda](https://github.com/LydiaMT/serverless-api/tree/main/put) | [DELETE lambda](https://github.com/LydiaMT/serverless-api/tree/main/delete)
 
 ## Feature Tasks
 
